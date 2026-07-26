@@ -7,11 +7,12 @@ use crate::state::*;
     mint_y: Address
 )]
 pub struct Initialize {
+    #[account(mut)]
     pub payer: Signer,
     #[account(
         init, 
         payer = payer, 
-        address = Config::seeds(payer.address(), mint_x, mint_y) 
+        address = Config::seeds(payer.address(), &mint_x, &mint_y)
     )]
     pub config: Config, 
     pub system_program: Program<SystemProgram>,
