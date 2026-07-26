@@ -500,9 +500,9 @@ checksum = "fc652a48c352aef3ea3aed32080501cf3ef6ed5da78602a020c991775b0aff04"
 
 [[package]]
 name = "cc"
-version = "1.3.0"
+version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c89588d05638b5b4594a3348a2d6c20277e43a7f5c5202b05cc56888475a47b8"
+checksum = "5add81bb678e6cb321aff7fa0dc7689ad82b112dbc032cea19f91d6b8e3582b9"
 dependencies = [
  "find-msvc-tools",
  "shlex",
@@ -740,9 +740,9 @@ dependencies = [
 
 [[package]]
 name = "either"
-version = "1.16.0"
+version = "1.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "91622ff5e7162018101f2fea40d6ebf4a78bbe5a49736a2020649edf9693679e"
+checksum = "9e5e8f6c15a24b9a3ee5efec809ccd006d3b30e8b3bb63c39af737c7f87daa1d"
 
 [[package]]
 name = "elliptic-curve"
@@ -955,6 +955,12 @@ name = "hashbrown"
 version = "0.17.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ed5909b6e89a2db4456e54cd5f673791d7eca6732202bbf2a9cc504fe2f9b84a"
+
+[[package]]
+name = "heck"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
 
 [[package]]
 name = "hmac"
@@ -1392,20 +1398,20 @@ dependencies = [
 
 [[package]]
 name = "quasar-derive"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
+ "heck",
+ "proc-macro-crate",
  "proc-macro2",
- "quasar-idl-schema",
- "quasar-schema",
  "quote",
- "serde_json",
  "syn 2.0.119",
 ]
 
 [[package]]
 name = "quasar-idl-schema"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
+ "semver",
  "serde",
  "serde_json",
  "sha2 0.10.9",
@@ -1413,7 +1419,7 @@ dependencies = [
 
 [[package]]
 name = "quasar-lang"
-version = "0.0.0"
+version = "0.1.0"
 dependencies = [
  "bs58",
  "const-crypto",
@@ -1423,7 +1429,6 @@ dependencies = [
  "serde_json",
  "solana-account-view",
  "solana-address 2.5.0",
- "solana-compiler-builtins",
  "solana-define-syscall 5.1.0",
  "solana-instruction",
  "solana-instruction-view",
@@ -1432,10 +1437,6 @@ dependencies = [
  "wincode",
  "zeropod",
 ]
-
-[[package]]
-name = "quasar-schema"
-version = "0.0.0"
 
 [[package]]
 name = "quasar-svm"
@@ -1885,7 +1886,7 @@ checksum = "7116e1d942a2432ca3f514625104757ab8a56233787e95144c93950029e31176"
 dependencies = [
  "blake3",
  "solana-define-syscall 4.0.1",
- "solana-hash 4.5.0",
+ "solana-hash 4.6.0",
 ]
 
 [[package]]
@@ -1944,11 +1945,6 @@ dependencies = [
  "solana-sdk-macro",
  "solana-sysvar-id",
 ]
-
-[[package]]
-name = "solana-compiler-builtins"
-version = "0.1.0"
-source = "git+https://github.com/blueshift-gg/solana-compiler-builtins#a8c55dd1bb82d0983200926ae02f380a607e89b9"
 
 [[package]]
 name = "solana-compute-budget"
@@ -2014,7 +2010,7 @@ checksum = "1cddf2388b28291210d9aa60690740733cab527531f06ed153c4d388951e407c"
 dependencies = [
  "serde",
  "serde_derive",
- "solana-hash 4.5.0",
+ "solana-hash 4.6.0",
  "solana-sdk-ids",
  "solana-sdk-macro",
  "solana-sysvar-id",
@@ -2056,14 +2052,14 @@ version = "3.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "337c246447142f660f778cf6cb582beba8e28deb05b3b24bfb9ffd7c562e5f41"
 dependencies = [
- "solana-hash 4.5.0",
+ "solana-hash 4.6.0",
 ]
 
 [[package]]
 name = "solana-hash"
-version = "4.5.0"
+version = "4.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6f4c847893a2ea50b4ae3ca723b124e07cd0544fecea3598f785168f9b78333f"
+checksum = "0df9b01495ed31100aca97a7f5862d5e19ab1636d60d1a9f02391408dd9dec84"
 dependencies = [
  "bytemuck",
  "bytemuck_derive",
@@ -2090,9 +2086,9 @@ dependencies = [
 
 [[package]]
 name = "solana-instruction-error"
-version = "2.4.0"
+version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3b7d34343838343a3755b7dfb1e438d94c6db2263b519cfe3c2257af932b6e93"
+checksum = "e8e7db78c122d02189619490b1fef04a2a042c389662920617c0e6381fdf8fdd"
 dependencies = [
  "num-traits",
  "solana-program-error",
@@ -2135,7 +2131,7 @@ checksum = "ed1c0d16d6fdeba12291a1f068cdf0d479d9bff1141bf44afd7aa9d485f65ef8"
 dependencies = [
  "sha3",
  "solana-define-syscall 4.0.1",
- "solana-hash 4.5.0",
+ "solana-hash 4.6.0",
 ]
 
 [[package]]
@@ -2188,7 +2184,7 @@ checksum = "0448b1fd891c5f46491e5dc7d9986385ba3c852c340db2911dd29faa01d2b08d"
 dependencies = [
  "lazy_static",
  "solana-address 2.5.0",
- "solana-hash 4.5.0",
+ "solana-hash 4.6.0",
  "solana-instruction",
  "solana-sanitize",
  "solana-sdk-ids",
@@ -2213,7 +2209,7 @@ dependencies = [
  "serde",
  "serde_derive",
  "solana-fee-calculator",
- "solana-hash 4.5.0",
+ "solana-hash 4.6.0",
  "solana-pubkey 4.2.0",
  "solana-sha256-hasher",
 ]
@@ -2475,7 +2471,7 @@ checksum = "db7dc3011ea4c0334aaaa7e7128cb390ecf546b28d412e9bf2064680f57f588f"
 dependencies = [
  "sha2 0.10.9",
  "solana-define-syscall 4.0.1",
- "solana-hash 4.5.0",
+ "solana-hash 4.6.0",
 ]
 
 [[package]]
@@ -2496,7 +2492,7 @@ checksum = "0a57c158c35629f9e302ab385f16b15813f4927a31c27dda72f3df828bb08d93"
 dependencies = [
  "serde",
  "serde_derive",
- "solana-hash 4.5.0",
+ "solana-hash 4.6.0",
  "solana-sdk-ids",
  "solana-sysvar-id",
 ]
@@ -2668,7 +2664,7 @@ dependencies = [
  "solana-epoch-rewards",
  "solana-epoch-schedule",
  "solana-fee-calculator",
- "solana-hash 4.5.0",
+ "solana-hash 4.6.0",
  "solana-instruction",
  "solana-last-restart-slot",
  "solana-program-entrypoint",
@@ -2700,7 +2696,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "96697cff5075a028265324255efed226099f6d761ca67342b230d09f72cc48d2"
 dependencies = [
  "solana-address 2.5.0",
- "solana-hash 4.5.0",
+ "solana-hash 4.6.0",
  "solana-instruction",
  "solana-instruction-error",
  "solana-message",
@@ -2730,9 +2726,9 @@ dependencies = [
 
 [[package]]
 name = "solana-transaction-error"
-version = "3.3.1"
+version = "3.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a949797bc1ac31836d0070e791083028a8c2e0d493fa4cf51c0bed7a04c65c22"
+checksum = "8a37cf28c58b03878d38c38411f0414d3a99a9e3b7e5ebb0f83f3317b2796d18"
 dependencies = [
  "solana-instruction-error",
  "solana-sanitize",

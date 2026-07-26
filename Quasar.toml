@@ -1,25 +1,13 @@
 [project]
 name = "quasar-amm"
 
-[toolchain]
-type = "solana"
-
 [testing]
-language = "rust"
-
-[testing.rust]
-framework = "quasar-svm"
-
-[testing.rust.test]
-program = "cargo"
-args = [
-    "test",
-    "tests::",
-]
+command = { program = "cargo", args = ["test", "tests::"] }
 
 [clients]
 path = "target/client"
-languages = [
+targets = [
     "rust",
-    "typescript",
+    "kit",
+    "web3",
 ]
